@@ -32,13 +32,21 @@ const MenuProps = {
   },
 };
 
-
+function getStyles(input: string, selection: (string | undefined)[], theme: Theme) {
+  return {
+    fontWeight:
+      selection.indexOf(input) === -1 ? theme.typography.fontWeightRegular : theme.typography.fontWeightMedium,
+  };
+}
 
 export default (props: { metrics: string[]; selection: (string | undefined)[]; setSelection: Function }) => {
   const classes = useStyles();
   const theme = useTheme();
   const { selection, setSelection, metrics } = props;
 
+  const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+    setSelection(event.target.value as (string | undefined)[]);
+  };
 
   return (
     <FormControl className={classes.formControl}>

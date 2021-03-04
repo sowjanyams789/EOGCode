@@ -31,7 +31,7 @@ export default (props: {
           })}
         </Grid>
         <Grid item xs={12} sm={6}>
-          {/*render a select box that will set the selection object in Dashboard state*/}
+
           <SelectBox metrics={metrics} selection={selection} setSelection={setSelection} />
         </Grid>
       </Grid>

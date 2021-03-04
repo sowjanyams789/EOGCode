@@ -15,5 +15,5 @@ export function DataTag(props: { measurement: Measurement }) {
   const classes = useStyles();
   const { measurement } = props;
 
-  return <Chip className={classes.chip} label={`$: ${measurement.value}${measurement.unit}`} />;
+  return <Chip className={classes.chip} label={`${measurement.metric}: ${measurement.value}${measurement.unit}`} />;
 }
